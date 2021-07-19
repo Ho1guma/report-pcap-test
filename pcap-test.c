@@ -93,8 +93,7 @@ int main(int argc, char* argv[]) {
         //tcp header
         tcp_header = (struct libnet_tcp_hdr *)(packet);
 
-        u_int8_t offset = tcp_header->th_off;
-        printf("offset : %x\n",offset);
+       //u_int16_t tcp_offset = tcp_header->th_off;
         u_int16_t tcp_offset = tcp_header->th_off;
         u_int8_t tcp_header_size =(ntohs(tcp_offset)>>4)/4;
         packet = packet + tcp_header_size;
